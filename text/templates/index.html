@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>index</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Text Analyser</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome TO TEXT Analyzer!</strong> EDIT YOUR DATA.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>
+  <h4>My name is : {{ name }} My location is : {{ location }} My age is : {{ age }}</h4>
+    <div class="container">
+          <form action="/analyzed" method="POST">
+              {% csrf_token %}
+        <div class="form-group">
+              <label for="formGroupExampleInput">Enter Your Text</label>
+                <textarea class="form-control" id="remove_punc" name="text" rows="3" name="text"></textarea>
+
+        </div>
+
+            <div class="custom-control custom-radio custom-control-inline">
+      <input type="radio" id="customRadioInline1" name="fullcaps" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline1">FULL CAPS</label>
+</div><br>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline2" name="remove_punc" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">REMOVE PUNNCATION
+</label>
+</div><br>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline3" name="new_line_remove" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline3">NEW LINE REMOVER</label>
+</div><br>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline4" name="space_remove" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline4">SPACE REMOVER</label>
+</div><br>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline5" name="char_count" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline5">CHARACTER COUNT</label>
+</div><br><br>
+            <button type="submit" class="btn btn-dark mt-2">Analyze TEXT</button>
+          </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
